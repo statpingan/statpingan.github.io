@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Blog</title>
+    <!-- 引入 Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- 引入 Marked.js -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 2rem;
+        }
+
+        .icon {
+            font-size: 24px;
+            color: #333;
+            margin-right: 8px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        article {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        code {
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <i class="fab fa-github icon"></i>
+        <h1>My Blog</h1>
+    </header>
+    
+    <article id="blog-content"></article>
+
+    <script>
+        // Markdown 博客内容
+        const markdownContent = `
+# My First Blog Post
+This is a sample **Markdown** blog post.
+
+## Section 1
+Some interesting text goes here.
+
+### Subsection 1.1
+Even more interesting stuff here.
+
+- List item 1
+- List item 2
+- List item 3
+
+## Section 2
+Here's some code:
+
+\`\`\`python
+def greet(name):
+    return f"Hello, {name}!"
+
+print(greet("World"))
+\`\`\`
+
+## Links
+- [GitHub](https://github.com/)
+- [OpenAI](https://openai.com/)
+
+### Images
+![Markdown Logo](https://upload.wikimedia.org/wikipedia/commons/4/48/Markdown-mark.svg)
+
+## Conclusion
+Hope you enjoyed this post!
+        `;
+
+        // 使用 Marked.js 将 Markdown 转换为 HTML
+        document.getElementById('blog-content').innerHTML = marked.parse(markdownContent);
+    </script>
+</body>
+</html>
