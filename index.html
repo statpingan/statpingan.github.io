@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Likang LI - Academic Homepage</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            padding-top: 80px;
+            background-color: #f4f4f9;
+        }
+        .navbar {
+            background-color: #007bff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .navbar-nav a {
+            color: white !important;
+            transition: color 0.3s;
+        }
+        .navbar-nav a:hover {
+            color: #ccc !important;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .header h1 {
+            font-size: 3em;
+            margin: 0;
+            color: #007bff;
+            letter-spacing: 2px;
+        }
+        .header p {
+            font-size: 1.2em;
+            color: #777;
+        }
+        .header img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+        .header img:hover {
+            transform: scale(1.1);
+        }
+        .content {
+            margin-bottom: 40px;
+        }
+        .content h2 {
+            margin-top: 40px;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+            letter-spacing: 1px;
+            color: #007bff;
+            scroll-margin-top: 80px; /* Adjust offset here */
+        }
+        .icon {
+            color: #007bff;
+            font-size: 1.2em;
+            margin-right: 10px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background: #007bff;
+            color: white;
+            border-top: 1px solid #ddd;
+        }
+        .blog-post {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .blog-post:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .blog-post-title {
+            margin: 0;
+            color: #007bff;
+        }
+        .blog-post-date {
+            color: #777;
+            font-size: 0.9em;
+        }
+        .animated-header {
+            animation: fadeInDown 1s;
+        }
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Fixed Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand animated-header" href="#">Likang LI</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
+                <li class="nav-item"><a class="nav-link" href="#research">Research Interests</a></li>
+                <li class="nav-item"><a class="nav-link" href="#publications">Publications</a></li>
+                <li class="nav-item"><a class="nav-link" href="#projects">Research Projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="#teaching">Teaching Experience</a></li>
+                <li class="nav-item"><a class="nav-link" href="#awards">Awards & Honors</a></li>
+                <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="header" data-aos="fade-up">
+        <img src="path/to/your_photo.jpg" alt="Likang LI">
+        <h1>Likang LI</h1>
+        <p>Ph.D. Candidate in Bayesian Deep Learning | University of XYZ</p>
+        <p><i class="fas fa-envelope icon"></i> <a href="mailto:likang.li@uic.edu.cn">likang.li@uic.edu.cn</a></p>
+    </div>
+
+    <div class="content">
+        <h2 id="about" data-aos="fade-up">About Me</h2>
+        <p data-aos="fade-up">
+            I am a Ph.D. candidate at the University of XYZ, specializing in Bayesian Deep Learning. My research interests include Bayesian neural networks, probabilistic programming, and their applications in healthcare and large language models.
+        </p>
+
+        <h2 id="research" data-aos="fade-up">Research Interests</h2>
+        <ul data-aos="fade-up">
+            <li>Bayesian Deep Learning</li>
+            <li>Probabilistic Programming</li>
+            <li>Large Language Models (LLMs)</li>
+            <li>Healthcare Applications</li>
+            <li>Uncertainty Estimation</li>
+        </ul>
+
+        <h2 id="publications" data-aos="fade-up">Publications</h2>
+        <ul data-aos="fade-up">
+            <li>
+                **Li, L.**, Author2, and Author3. "Title of the Paper." <em>Journal Name</em>, Year. <a href="#">[PDF]</a> <a href="#">[DOI]</a>
+            </li>
+            <li>
+                **Li, L.**, Author2, and Author3. "Title of the Paper." <em>Conference Name</em>, Year. <a href="#">[PDF]</a> <a href="#">[DOI]</a>
+            </li>
+            <li>
+                **Li, L.**, Author2, and Author3. "Title of the Paper." <em>Workshop Name</em>, Year. <a href="#">[PDF]</a> <a href="#">[DOI]</a>
+            </li>
+        </ul>
+
+        <h2 id="projects" data-aos="fade-up">Research Projects</h2>
+        <ul data-aos="fade-up">
+            <li>
+                **Project 1:** Bayesian Deep Learning for Healthcare Applications
+                <br>
+                <p>
+                    Description: Investigating the use of Bayesian deep learning techniques to improve diagnostic accuracy in healthcare.
+                </p>
+            </li>
+            <li>
+                **Project 2:** Uncertainty Estimation in Large Language Models
+                <br>
+                <p>
+                    Description: Applying Bayesian inference methods to quantify uncertainty in predictions made by large language models.
+                </p>
+            </li>
+            <li>
+                **Project 3:** Variational Inference Improvements
+                <br>
+                <p>
+                    Description: Developing new metrics to enhance variational inference performance in Bayesian deep learning models.
+                </p>
+            </li>
+        </ul>
+
+        <h2 id="teaching" data-aos="fade-up">Teaching Experience</h2>
+        <ul data-aos="fade-up">
+            <li>
+                **Teaching Assistant:** Bayesian Deep Learning (Spring 2023)
+                <br>
+                <p>
+                    Assisted in developing coursework, grading assignments, and providing additional instructional support.
+                </p>
+            </li>
+            <li>
+                **Teaching Assistant:** Machine Learning (Fall 2022)
+                <br>
+                <p>
+                    Supported course instructor with lecture material preparation and guided lab sessions.
+                </p>
+            </li>
+        </ul>
+
+        <h2 id="awards" data-aos="fade-up">Awards & Honors</h2>
+        <ul data-aos="fade-up">
+            <li>XYZ Fellowship for Research Excellence, University of XYZ, 2023</li>
+            <li>Best Paper Award, ABC Conference, 2022</li>
+            <li>National Scholarship for Outstanding Students, China, 2021</li>
+        </ul>
+
+        <h2 id="blog" data-aos="fade-up">Blog</h2>
+        <div class="blog-post" data-aos="fade-up">
+            <h3 class="blog-post-title">Understanding Bayesian Deep Learning</h3>
+            <p class="blog-post-date">April 12, 2024</p>
+            <p>Bayesian deep learning combines the flexibility of neural networks with the uncertainty modeling of Bayesian inference. In this post, we'll explore the key concepts and how they apply to practical problems.</p>
+            <a href="#">Read More</a>
+        </div>
+        <div class="blog-post" data-aos="fade-up">
+            <h3 class="blog-post-title">Applications of Bayesian Neural Networks in Healthcare</h3>
+            <p class="blog-post-date">March 18, 2024</p>
+            <p>Healthcare applications benefit from Bayesian deep learning by providing more accurate uncertainty estimates in diagnosis and prediction. Here, we discuss recent advancements in this area.</p>
+            <a href="#">Read More</a>
+        </div>
+        <div class="blog-post" data-aos="fade-up">
+            <h3 class="blog-post-title">Improving Variational Inference for Large Language Models</h3>
+            <p class="blog-post-date">February 22, 2024</p>
+            <p>Large language models can benefit from improved variational inference techniques to provide better uncertainty quantification. In this article, we propose some potential improvements.</p>
+            <a href="#">Read More</a>
+        </div>
+
+        <h2 id="contact" data-aos="fade-up">Contact</h2>
+        <p data-aos="fade-up">
+            **Address:** Department of Computer Science, University of XYZ, Street Name, City, Zip Code, Country
+            <br>
+            **Email:** <a href="mailto:likang.li@uic.edu.cn">likang.li@uic.edu.cn</a>
+            <br>
+            **GitHub:** <a href="https://github.com/likangli">https://github.com/likangli</a>
+            <br>
+            **LinkedIn:** <a href="https://www.linkedin.com/in/likangli">https://www.linkedin.com/in/likangli</a>
+        </p>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 Likang LI</p>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+</body>
+</html>
