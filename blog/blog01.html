@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Stylish Blog</title>
+    <!-- 引入 Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- 引入 Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- 引入 Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- 引入 Marked.js -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f9fa;
+            color: #343a40;
+            margin: 0;
+        }
+
+        .icon {
+            font-size: 24px;
+            color: #007bff;
+            margin-right: 8px;
+        }
+
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        header h1 {
+            font-weight: 700;
+        }
+
+        .container {
+            max-width: 900px;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            border-radius: 8px;
+        }
+
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        code {
+            font-family: "Courier New", Courier, monospace;
+        }
+
+        footer {
+            text-align: center;
+            margin: 3rem 0 1rem 0;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <i class="fab fa-github icon"></i>
+        <h1>My Stylish Blog</h1>
+        <p>Sharing knowledge and insights</p>
+    </header>
+    
+    <div class="container">
+        <article id="blog-content"></article>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 My Stylish Blog</p>
+    </footer>
+
+    <script>
+        // Markdown 博客内容
+        const markdownContent = `
+# My First Stylish Blog Post
+This is a sample **Markdown** blog post.
+
+## Section 1
+Some interesting text goes here.
+
+### Subsection 1.1
+Even more interesting stuff here.
+
+- List item 1
+- List item 2
+- List item 3
+
+## Section 2
+Here's some code:
+
+\`\`\`python
+def greet(name):
+    return f"Hello, {name}!"
+
+print(greet("World"))
+\`\`\`
+
+## Links
+- [GitHub](https://github.com/)
+- [OpenAI](https://openai.com/)
+
+### Images
+![Markdown Logo](https://upload.wikimedia.org/wikipedia/commons/4/48/Markdown-mark.svg)
+
+## Conclusion
+Hope you enjoyed this post!
+        `;
+
+        // 使用 Marked.js 将 Markdown 转换为 HTML
+        document.getElementById('blog-content').innerHTML = marked.parse(markdownContent);
+    </script>
+</body>
+</html>
