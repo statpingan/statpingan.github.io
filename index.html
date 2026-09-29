@@ -1,384 +1,1090 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pingan He - Homepage</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+
+    <title>Ping'an He - Homepage</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- AOS Animation -->
+    <link rel="stylesheet"
+          href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+
     <style>
+
+        :root {
+            --primary: #087cf0;
+            --primary-dark: #0568cc;
+            --text: #2c3038;
+            --secondary-text: #6c757d;
+            --background: #f5f7fb;
+            --card-background: #ffffff;
+            --border: #e3e8ef;
+        }
+
+
+        /* ==================================================
+           General
+        ================================================== */
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Arial', sans-serif;
-            padding-top: 80px;
-            background-color: #f4f4f9;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                         Arial, Helvetica, sans-serif;
+
+            padding-top: 90px;
+            background-color: var(--background);
+            color: var(--text);
+
+            font-size: 17px;
+            line-height: 1.7;
+            font-weight: 400;
         }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: var(--primary-dark);
+            text-decoration: none;
+        }
+
+
+        /* ==================================================
+           Navigation Bar
+        ================================================== */
+
         .navbar {
-            background-color: #007bff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: var(--primary);
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.10);
+            padding-top: 12px;
+            padding-bottom: 12px;
         }
-        .navbar-nav a {
+
+        .navbar-brand {
+            font-size: 1.35rem;
+            font-weight: 500;
+        }
+
+        .navbar-nav .nav-link {
             color: white !important;
-            transition: color 0.3s;
+            font-size: 0.97rem;
+            margin-left: 6px;
+            transition: opacity 0.2s;
         }
-        .navbar-nav a:hover {
-            color: #ccc !important;
+
+        .navbar-nav .nav-link:hover {
+            opacity: 0.75;
         }
-        .header {
-            text-align: center;
-            margin-bottom: 40px;
+
+
+        /* ==================================================
+           Profile / Header
+        ================================================== */
+
+        .profile-card {
+            background: var(--card-background);
+
+            border-radius: 20px;
+            padding: 35px;
+
+            margin-top: 20px;
+            margin-bottom: 35px;
+
+            box-shadow:
+                0 4px 20px rgba(0, 0, 0, 0.06);
+
+            border: 1px solid var(--border);
         }
-        .header h1 {
-            font-size: 3em;
-            margin: 0;
-            color: #007bff;
-            letter-spacing: 2px;
-        }
-        .header p {
-            font-size: 1.2em;
-            color: #777;
-        }
-        .header img {
-            width: 300px;
-            height: 200px;
+
+        .profile-photo {
+            width: 260px;
+            height: 220px;
+
             object-fit: cover;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-            transition: transform 0.3s;
+
+            border-radius: 15px;
+
+            box-shadow:
+                0 5px 18px rgba(0, 0, 0, 0.13);
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
         }
-        .header img:hover {
-            transform: scale(1.05);
+
+        .profile-photo:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 9px 25px rgba(0, 0, 0, 0.16);
         }
+
+        .profile-name {
+            color: var(--primary);
+
+            font-size: 2.9rem;
+            font-weight: 500;
+
+            margin-bottom: 8px;
+        }
+
+        .profile-title {
+            color: var(--secondary-text);
+
+            font-size: 1.15rem;
+
+            margin-bottom: 22px;
+        }
+
+
+        /* ==================================================
+           Profile Links
+        ================================================== */
+
+        .profile-links {
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 10px;
+        }
+
+        .profile-link {
+            display: inline-flex;
+
+            align-items: center;
+
+            padding: 7px 14px;
+
+            border-radius: 8px;
+
+            background-color: #f7faff;
+
+            border: 1px solid #d7e6fb;
+
+            color: var(--primary);
+
+            font-size: 0.94rem;
+
+            transition:
+                background-color 0.2s,
+                transform 0.2s;
+        }
+
+        .profile-link:hover {
+            background-color: #eaf3ff;
+            transform: translateY(-1px);
+        }
+
+        .profile-link i {
+            margin-right: 7px;
+        }
+
+
+        /* ==================================================
+           Main Content
+        ================================================== */
+
         .content {
             margin-bottom: 40px;
         }
-        .content h2 {
-            margin-top: 40px;
-            border-bottom: 2px solid #007bff;
-            padding-bottom: 10px;
-            letter-spacing: 1px;
-            color: #007bff;
-            scroll-margin-top: 80px;
+
+        .section-card {
+            background: var(--card-background);
+
+            border-radius: 15px;
+
+            padding: 28px 32px;
+
+            margin-bottom: 28px;
+
+            border: 1px solid var(--border);
+
+            box-shadow:
+                0 3px 14px rgba(0, 0, 0, 0.045);
         }
-        .icon {
-            color: #007bff;
-            font-size: 1.2em;
+
+
+        /* ==================================================
+           Section Titles
+        ================================================== */
+
+        .content h2 {
+            color: var(--primary);
+
+            font-size: 2rem;
+
+            font-weight: 400;
+
+            margin-top: 0;
+            margin-bottom: 20px;
+
+            padding-bottom: 10px;
+
+            border-bottom:
+                2px solid var(--primary);
+
+            scroll-margin-top: 100px;
+        }
+
+
+        /* ==================================================
+           Normal Text
+        ================================================== */
+
+        .content p,
+        .content ul,
+        .content li {
+            font-weight: 400;
+        }
+
+        .content p {
+            margin-bottom: 16px;
+        }
+
+        .content ul {
+            padding-left: 25px;
+            margin-bottom: 0;
+        }
+
+        .content li {
+            margin-bottom: 7px;
+        }
+
+
+        /* ==================================================
+           Research Interests
+        ================================================== */
+
+        .research-list li {
+            margin-bottom: 8px;
+        }
+
+
+        /* ==================================================
+           Publications
+        ================================================== */
+
+        .publication-list {
+            padding-left: 25px;
+        }
+
+        .publication-list li {
+            margin-bottom: 18px;
+
+            line-height: 1.65;
+
+            font-weight: 400;
+        }
+
+        /*
+          ONLY my name is bold in publications.
+        */
+
+        .publication-list strong {
+            font-weight: 700;
+        }
+
+        .publication-list em {
+            font-style: italic;
+        }
+
+        .doi-link {
+            margin-left: 4px;
+
+            font-weight: 500;
+
+            white-space: nowrap;
+        }
+
+
+        /* ==================================================
+           Projects / Teaching
+        ================================================== */
+
+        .entry-list > li {
+            margin-bottom: 22px;
+        }
+
+        .entry-title {
+            color: #333;
+            font-weight: 400;
+        }
+
+        .entry-description {
+            margin-top: 5px;
+            margin-bottom: 0 !important;
+
+            color: #555;
+        }
+
+
+        /* ==================================================
+           Contact
+        ================================================== */
+
+        .contact-line {
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-line i {
+            color: var(--primary);
             margin-right: 10px;
         }
+
+
+        /* ==================================================
+           Footer
+        ================================================== */
+
         .footer {
             text-align: center;
-            margin-top: 40px;
-            padding: 20px;
-            background: #007bff;
+
+            margin-top: 45px;
+
+            padding: 22px;
+
+            background-color: var(--primary);
+
             color: white;
-            border-top: 1px solid #ddd;
         }
-        .blog-post {
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 15px;
-            margin-bottom: 20px;
-            background-color: white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+
+        .footer p {
+            margin-bottom: 0;
         }
-        .blog-post:hover {
-            transform: scale(1.02);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
-        .blog-post-title {
-            margin: 0;
-            color: #007bff;
-        }
-        .blog-post-date {
-            color: #777;
-            font-size: 0.9em;
-        }
-        .animated-header {
-            animation: fadeInDown 1s;
-        }
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
+
+
+        /* ==================================================
+           Mobile
+        ================================================== */
+
+        @media (max-width: 767px) {
+
+            body {
+                padding-top: 75px;
+                font-size: 16px;
             }
-            to {
-                opacity: 1;
-                transform: translateY(0);
+
+            .profile-card {
+                padding: 25px 20px;
+                text-align: center;
             }
+
+            .profile-photo {
+                width: 220px;
+                height: 190px;
+                margin-bottom: 22px;
+            }
+
+            .profile-name {
+                font-size: 2.3rem;
+            }
+
+            .profile-links {
+                justify-content: center;
+            }
+
+            .section-card {
+                padding: 23px 20px;
+            }
+
+            .content h2 {
+                font-size: 1.75rem;
+            }
+
         }
+
     </style>
+
 </head>
+
+
 <body>
 
-<!-- Fixed Navigation Bar -->
+
+<!-- ==============================================================
+     Navigation Bar
+============================================================== -->
+
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+
     <div class="container">
-        <a class="navbar-brand animated-header" href="#">Pingan He</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+
+        <a class="navbar-brand" href="#">
+            Ping'an He
+        </a>
+
+        <button class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+
             <span class="navbar-toggler-icon"></span>
+
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
+
+
+        <div class="collapse navbar-collapse"
+             id="navbarNav">
+
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a class="nav-link" href="#Bio">Bio</a></li>
-                <li class="nav-item"><a class="nav-link" href="#research">Research Interests</a></li>
-                <li class="nav-item"><a class="nav-link" href="#publications">Publications</a></li>
-                <li class="nav-item"><a class="nav-link" href="#projects">Research Projects</a></li>
-                <li class="nav-item"><a class="nav-link" href="#teaching">Teaching Experience</a></li>
-                <li class="nav-item"><a class="nav-link" href="#awards">Awards & Honors</a></li>
-                <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
-                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#Bio">
+                        Bio
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#research">
+                        Research
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#publications">
+                        Publications
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#projects">
+                        Projects
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#teaching">
+                        Teaching
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#awards">
+                        Awards
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">
+                        Contact
+                    </a>
+                </li>
+
             </ul>
+
         </div>
+
     </div>
+
 </nav>
 
-<!-- 
-==================================================================
-||             从这里往下开始编辑信息，不要动上面的代码             ||
-================================================================== 
--->
+
+
+<!-- ==============================================================
+     Main Page
+============================================================== -->
+
 <div class="container">
 
-    <!-- ===================== -->
-    <!-- Personal Information -->
-    <!-- ===================== -->
 
-    <div class="header" data-aos="fade-up">
+    <!-- ==========================================================
+         Personal Information
+    ========================================================== -->
 
-        <!-- Photo -->
-        <img src="pic/hepingan.png" alt="Ping'an He">
+    <div class="profile-card"
+         data-aos="fade-up">
 
-        <!-- Name -->
-        <h1>Ping'an He</h1>
+        <div class="row align-items-center">
 
-        <!-- Affiliation -->
-        <p>
-            PhD student | Beijing Normal-Hong Kong Baptist University
-        </p>
 
-        <!-- Contact / Academic Links -->
-        <p>
+            <!-- Photo -->
 
-            <i class="fas fa-envelope icon"></i>
-            <a href="mailto:hepingan@bnbu.edu.cn"
-               style="text-decoration: none;">
-                Email
-            </a>
+            <div class="col-md-4 text-center">
 
-            &nbsp;&nbsp;
+                <img src="pic/hepingan.png"
+                     class="profile-photo"
+                     alt="Ping'an He">
 
-           <i class="fas fa-file-pdf icon"></i>
-        <a href="CV.pdf"
-           target="_blank"
-           style="text-decoration: none;">
-            CV
-        </a>
+            </div>
 
-            &nbsp;&nbsp;
 
-            <i class="fas fa-graduation-cap icon"></i>
-            <a href="https://scholar.google.com/citations?user=m7oS2Q0AAAAJ&hl=en"
-               target="_blank"
-               style="text-decoration: none;">
-                Google Scholar
-            </a>
+            <!-- Information -->
 
-            &nbsp;&nbsp;
+            <div class="col-md-8">
 
-            <i class="fas fa-id-card icon"></i>
-            <a href="https://orcid.org/0009-0006-1723-9212"
-               target="_blank"
-               style="text-decoration: none;">
-                ORCID
-            </a>
+                <h1 class="profile-name">
+                    Ping'an He
+                </h1>
 
-        </p>
+                <p class="profile-title">
+                    PhD Student in Probability and Mathematical Statistics
+                    <br>
+                    Beijing Normal-Hong Kong Baptist University
+                </p>
+
+
+                <!-- Links -->
+
+                <div class="profile-links">
+
+
+                    <!-- Email -->
+
+                    <a class="profile-link"
+                       href="mailto:hepingan@bnbu.edu.cn">
+
+                        <i class="fas fa-envelope"></i>
+
+                        Email
+
+                    </a>
+
+
+                    <!-- CV -->
+
+                    <a class="profile-link"
+                       href="CV.pdf"
+                       target="_blank">
+
+                        <i class="fas fa-file-pdf"></i>
+
+                        CV
+
+                    </a>
+
+
+                    <!-- Google Scholar -->
+
+                    <a class="profile-link"
+                       href="https://scholar.google.com/citations?user=m7oS2Q0AAAAJ&hl=en"
+                       target="_blank"
+                       rel="noopener noreferrer">
+
+                        <i class="fas fa-graduation-cap"></i>
+
+                        Google Scholar
+
+                    </a>
+
+
+                    <!-- ORCID -->
+
+                    <a class="profile-link"
+                       href="https://orcid.org/0009-0006-1723-9212"
+                       target="_blank"
+                       rel="noopener noreferrer">
+
+                        <i class="fab fa-orcid"></i>
+
+                        ORCID
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
 
     </div>
-<div class="content">
-    <h2 id="Bio" data-aos="fade-up">Bio</h2>
 
-    <p data-aos="fade-up" style="margin-bottom: 18px;">
-        Hello! My name is Ping'an He. Welcome to my page, I try to make it interesting! 🙌
-        I am currently a PhD student, majoring in Probability and Mathematical Statistics at 
-        Beijing Normal-Hong Kong Baptist University, supervised by 
-        <a href="https://fst.bnbu.edu.cn/en/faculty/faculty.htm#/hjye/en"
-           style="font-weight: bold; text-decoration: none;">
-            Prof. Huajun Ye
-        </a>
-        and
-        <a href="https://fst.bnbu.edu.cn/en/faculty/faculty.htm#/ktfang/en"
-           style="font-weight: bold; text-decoration: none;">
-            Prof. Kai-Tai Fang
-        </a>.
-        From May 2026 to July 2026, I was a visiting student at 
-        The Chinese University of Hong Kong, hosted by 
-        <a href="https://www.sta.cuhk.edu.hk/peoples/xysong/"
-           style="font-weight: bold; text-decoration: none;">
-            Prof. Xinyuan Song
-        </a>.
-        I received my Master's degree from Nankai University in 2022 and my Bachelor's degree from Xinjiang University in 2019.
-    </p>
 
-    <p data-aos="fade-up">
-        My research interests focus on multivariate statistical analysis and statistical representative points. 
-        At the same time, I enjoy mathematical derivation and aim to extend my research through code! 
-        In life, I love running and table tennis, which make me feel free and happy! 
-        ✉️ Feel free to contact me if you would like to connect for any fun ideas or collaboration! 
-        I’m always eager to learn more and expand my horizons!
-    </p>
+
+    <!-- ==========================================================
+         Main Content
+    ========================================================== -->
+
+    <div class="content">
+
+
+
+        <!-- ======================================================
+             Bio
+        ====================================================== -->
+
+        <section class="section-card"
+                 data-aos="fade-up">
+
+            <h2 id="Bio">
+                Bio
+            </h2>
+
+
+            <p>
+
+                Hello! My name is Ping'an He.
+                Welcome to my page, I try to make it interesting! 🙌
+
+                I am currently a PhD student, majoring in Probability
+                and Mathematical Statistics at
+                Beijing Normal-Hong Kong Baptist University,
+                supervised by
+
+                <a href="https://fst.bnbu.edu.cn/en/faculty/faculty.htm#/hjye/en"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Prof. Huajun Ye
+                </a>
+
+                and
+
+                <a href="https://fst.bnbu.edu.cn/en/faculty/faculty.htm#/ktfang/en"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Prof. Kai-Tai Fang
+                </a>.
+
+                From May 2026 to July 2026,
+                I was a visiting student at
+                The Chinese University of Hong Kong,
+                hosted by
+
+                <a href="https://www.sta.cuhk.edu.hk/peoples/xysong/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Prof. Xinyuan Song
+                </a>.
+
+                I received my Master's degree from
+                Nankai University in 2022
+                and my Bachelor's degree from
+                Xinjiang University in 2019.
+
+            </p>
+
+
+            <p>
+
+                My research interests focus on
+                multivariate statistical analysis
+                and statistical representative points.
+
+                At the same time, I enjoy mathematical derivation
+                and aim to extend my research through code!
+
+                In life, I love running and table tennis,
+                which make me feel free and happy!
+
+                ✉️ Feel free to contact me if you would like
+                to connect for any fun ideas or collaboration!
+
+                I’m always eager to learn more and expand my horizons!
+
+            </p>
+
+        </section>
+
+
+
+        <!-- ======================================================
+             Research Interests
+        ====================================================== -->
+
+        <section class="section-card"
+                 data-aos="fade-up">
+
+            <h2 id="research">
+                Research Interests
+            </h2>
+
+            <ul class="research-list">
+
+                <li>
+                    Bayesian Deep Learning
+                </li>
+
+                <li>
+                    Multivariate Statistical Analysis
+                </li>
+
+                <li>
+                    Statistical Computing
+                </li>
+
+                <li>
+                    Applied Mathematics
+                </li>
+
+            </ul>
+
+        </section>
+
+
+
+        <!-- ======================================================
+             Publications
+        ====================================================== -->
+
+        <section class="section-card"
+                 data-aos="fade-up">
+
+            <h2 id="publications">
+                Publications
+            </h2>
+
+
+            <ul class="publication-list">
+
+
+                <!-- Paper 1 -->
+
+                <li>
+
+                    <strong>He, P.</strong>,
+                    Fang, K.-T., He, P., and Ye, H.
+
+                    “A new resampling method for meta Gaussian distributions.”
+
+                    <em>
+                        Statistics and Computing
+                    </em>,
+                    2025.
+
+                    <a class="doi-link"
+                       href="https://doi.org/10.1007/s11222-025-10717-4"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        [DOI]
+                    </a>
+
+                </li>
+
+
+                <!-- Paper 2 -->
+
+                <li>
+
+                    Yang, Y.,
+                    <strong>He, P.</strong>,
+                    Peng, X., and He, Q.
+
+                    “A novel number-theoretic sampling method for neural
+                    network solutions of partial differential equations.”
+
+                    <em>
+                        Neural Networks
+                    </em>,
+                    Volume 192, 2025,
+                    Article 107945.
+
+                    <a class="doi-link"
+                       href="https://doi.org/10.1016/j.neunet.2025.107945"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        [DOI]
+                    </a>
+
+                </li>
+
+
+                <!-- Paper 3 -->
+
+                <li>
+
+                    Wang, S., Li, Y., Fang, K.-T.,
+                    <strong>He, P.</strong>,
+                    and Ye, H.
+
+                    “A new non-parametric resampling method based on
+                    representative points.”
+
+                    <em>
+                        Communications in Statistics – Simulation and Computation
+                    </em>,
+                    2026.
+
+                    <a class="doi-link"
+                       href="https://doi.org/10.1080/03610918.2026.2718842"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        [DOI]
+                    </a>
+
+                </li>
+
+
+            </ul>
+
+        </section>
+
+
+
+        <!-- ======================================================
+             Research Projects
+        ====================================================== -->
+
+        <section class="section-card"
+                 data-aos="fade-up">
+
+            <h2 id="projects">
+                Research Projects
+            </h2>
+
+
+            <ul class="entry-list">
+
+
+                <li>
+
+                    <div class="entry-title">
+                        Project 1:
+                        Risk Assessment and Sampling Design
+                        for Vegetable Safety in Shenzhen
+                    </div>
+
+                    <p class="entry-description">
+
+                        Description:
+                        Used multivariate statistical methods
+                        (Safety Index, PCA, TOPSIS)
+                        to assess risk in vegetable supply channels
+                        across Shenzhen and designed an improved
+                        sampling scheme that reduces error.
+
+                    </p>
+
+                </li>
+
+
+                <li>
+
+                    <div class="entry-title">
+                        Project 2:
+                        Using Kalman Filter to Predict Wind Speed
+                    </div>
+
+                    <p class="entry-description">
+
+                        Description:
+                        Applied Kalman filtering to predict wind speed
+                        for wind farms in Hami, Xinjiang,
+                        and demonstrated superior accuracy compared
+                        with standard time-series forecasts.
+
+                    </p>
+
+                </li>
+
+
+                <li>
+
+                    <div class="entry-title">
+                        Project 3:
+                        Copula and Its Statistical Representative Points
+                    </div>
+
+                    <p class="entry-description">
+
+                        Description:
+                        Design sampling methods for common copula
+                        distributions and conduct related theoretical research.
+
+                    </p>
+
+                </li>
+
+
+            </ul>
+
+        </section>
+
+
+
+        <!-- ======================================================
+             Teaching Experience
+        ====================================================== -->
+
+        <section class="section-card"
+                 data-aos="fade-up">
+
+            <h2 id="teaching">
+                Teaching Experience
+            </h2>
+
+
+            <ul class="entry-list">
+
+
+                <li>
+
+                    <div class="entry-title">
+
+                        Research Assistant:
+                        Mathematical Analysis
+                        (Undergraduate Program in Applied Mathematics, NKU)
+
+                        <br>
+
+                        Fall 2022 and Spring 2023
+
+                    </div>
+
+                    <p class="entry-description">
+
+                        Assisted in handling teaching and research-related
+                        matters, especially writing lecture notes for
+                        the undergraduate Mathematical Analysis course.
+
+                    </p>
+
+                </li>
+
+
+                <li>
+
+                    <div class="entry-title">
+
+                        Teaching Assistant:
+                        Calculus I and II
+                        (Undergraduate Program in Statistics, BNBU)
+
+                        <br>
+
+                        Fall 2024 and Spring 2025
+
+                    </div>
+
+                    <p class="entry-description">
+
+                        Maintained weekly office hours for undergraduate
+                        Calculus courses, participated in assignment design,
+                        and reviewed students' coursework.
+
+                    </p>
+
+                </li>
+
+
+            </ul>
+
+        </section>
+
+
+
+        <!-- ======================================================
+             Awards
+        ====================================================== -->
+
+        <section class="section-card"
+                 data-aos="fade-up">
+
+            <h2 id="awards">
+                Awards &amp; Honors
+            </h2>
+
+            <ul>
+
+                <li>
+                    Outstanding Graduate of Xinjiang University, 2019
+                </li>
+
+                <li>
+                    National Scholarship for Undergraduates, 2018
+                </li>
+
+                <li>
+                    First Prize,
+                    National English Competition for College Students
+                    (Band C), 2017
+                </li>
+
+            </ul>
+
+        </section>
+
+
+
+        <!-- ======================================================
+             Contact
+        ====================================================== -->
+
+        <section class="section-card"
+                 data-aos="fade-up">
+
+            <h2 id="contact">
+                Contact
+            </h2>
+
+            <p class="contact-line">
+
+                <i class="fas fa-envelope"></i>
+
+                <a href="mailto:hepingan@bnbu.edu.cn">
+                    hepingan@bnbu.edu.cn
+                </a>
+
+            </p>
+
+        </section>
+
+
+    </div>
+
 </div>
 
-<!-- 
-==================================================================
-||                           研究兴趣                            ||
-================================================================== 
--->
 
-        <h2 id="research" data-aos="fade-up">Research Interests</h2>
-        <ul data-aos="fade-up">
-            <li><b>Bayesian Deep Learning</b></li>
-            <li><b>Multivariate statistical analysis</b></li>
-            <li><b>Statistical Computing<b></li>
-            <li><b>Applied mathematics<b></li>
-        </ul>
 
-<!-- 
-==================================================================
-||                           学术著作                            ||
-================================================================== 
--->
+<!-- ==============================================================
+     Footer
+============================================================== -->
 
-        <h2 id="publications" data-aos="fade-up">Publications</h2>
-        <ul data-aos="fade-up">
-           <li>
-  **He, P.**, Fang, K.-T., He, P., and Ye, H. “A new resampling method for meta Gaussian distributions.” <em>Statistics and Computing</em>, 2025. <a href="https://doi.org/10.1007/s11222-025-10717-4">[DOI]</a>
-</li>
-<li>
-  Yang, Y., **He, P.**, Peng, X., and He, Q. “A novel number-theoretic sampling method for neural network solutions of partial differential equations.” <em>Neural Networks</em>, Volume 192, 2025, Article 107945. <a href="https://doi.org/10.1016/j.neunet.2025.107945">[DOI]</a>
-</li>
- <li>
-    Wang, S., Li, Y., Fang, K.-T., **He, P.**, and Ye, H.
-    “A new non-parametric resampling method based on representative points.”
-    <em>Communications in Statistics – Simulation and Computation</em>, 2026.
-    <a href="https://doi.org/10.1080/03610918.2026.2718842">[DOI]</a>
-  </li>
-        </ul>
+<div class="footer">
 
-<!-- 
-==================================================================
-||                           科研项目                            ||
-================================================================== 
--->
+    <p>
+        &copy;
+        <span id="currentYear"></span>
+        Ping'an He
+    </p>
 
-        <h2 id="projects" data-aos="fade-up">Research Projects</h2>
-        <ul data-aos="fade-up">
-            <li>
-                **Project 1:** Risk Assessment and Sampling Design for Vegetable Safety in Shenzhen
-                <br>
-                <p>
-                    Description: Used multivariate statistical methods (Safety Index, PCA, TOPSIS) to assess risk in vegetable supply channels across Shenzhen and designed an improved sampling scheme that reduces error.
-                </p>
-            </li>
-            <li>
-                **Project 2:** Using Kalman filter to predict wind speed
-                <br>
-                <p>
-                    Description: Applied Kalman filtering to predict wind speed for wind farms in Hami, Xinjiang, and demonstrated superior accuracy compared with standard time-series forecasts.
-                </p>
-            </li>
-            <li>
-                **Project 3:** Copula and its statistical representative points
-                <br>
-                <p>
-                    Description: Design sampling methods for common copula distributions and conduct related theoretical research.
-                </p>
-            </li>
-        </ul>
-
-<!-- 
-==================================================================
-||                           授课信息                            ||
-================================================================== 
--->
-
-        <h2 id="teaching" data-aos="fade-up">Teaching Experience</h2>
-        <ul data-aos="fade-up">
-            <li>
-                **Research Assistant:** Mathematical Analysis (Undergraduate Program in Applied Mathematics, NKU) (Fall 2022 and Spring 2023)
-                <br>
-                <p>
-                    Assisted in handling teaching and research related matters, especially writing lecture notes for undergraduate’s "Mathematical Analysis" course.
-                </p>
-            </li>
-            <li>
-                **Teaching Assistant:** Calculus I and II (Undergraduate Program in Statistics, BNBU) (Fall 2024 and Spring 2025)
-                <br>
-                <p>
-                    Maintain weekly office hours for Calculus for Undergraduate Students and Involve in the assignments design and review students’work of the curriculum
-                </p>
-            </li>
-        </ul>
-
-<!-- 
-==================================================================
-||                           获奖信息                            ||
-================================================================== 
--->
-
-        <h2 id="awards" data-aos="fade-up">Awards & Honors</h2>
-        <ul data-aos="fade-up">
-            <li>Outstanding Graduate of Xinjiang University, 2019</li>
-            <li>National Scholarship for Undergraduates, 2018</li>
-            <li>The First Prize for 2017 National English Competition for College Students(Band C), 2017</li>
-        </ul>
-
-<!-- 
-==================================================================
-||                           contact                            ||
-================================================================== 
--->
-
-        <h2 id="contact" data-aos="fade-up">Contact</h2>
-        <p data-aos="fade-up">
-            Email: <a href="mailto:hepingan@bnbu.edu.cn">hepingan@bnbu.edu.cn</a>
-        
-        </p>
-    </div>
-
-    <div class="footer">
-        <p>&copy; 2024 Ping'an He</p>
-    </div>
 </div>
 
-<!-- 
-==================================================================
-||             从这里开始停止编辑信息，不要动下面的代码             ||
-================================================================== 
--->
+
+
+<!-- ==============================================================
+     JavaScript
+============================================================== -->
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+
 <script>
-    AOS.init();
+
+    AOS.init({
+        duration: 650,
+        once: true
+    });
+
+    document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
+
 </script>
+
+
 </body>
+
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
